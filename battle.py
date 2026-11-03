@@ -19,7 +19,7 @@ class Battle:
         if self.enemy.is_alive:
             self.enemy.attack(self.hero)
 
-        print(f"End: {self.hero.name} (HP: {self.hero.hp}) vs {self.enemy.name} (HP: {self.enemy.hp})")
+        print(f"End: {self.hero.name} (HP: {self.hero.hp}) vs {self.enemy.name} (HP: {self.enemy.hp})\n")
 
     def simulate_battle(self) -> None:
         """Simulate the battle until one character is defeated"""
@@ -28,5 +28,6 @@ class Battle:
 
         if self.hero.is_alive:
             return self.hero
-        elif self.enemy.is_alive:
-            return self.enemy
+        
+        return self.enemy
+    
