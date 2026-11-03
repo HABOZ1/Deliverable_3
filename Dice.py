@@ -1,5 +1,6 @@
 import random
 
+
 class Dice:
     """Represents a n-sided dice"""
 

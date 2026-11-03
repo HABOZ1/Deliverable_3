@@ -1,5 +1,6 @@
 from dice import Dice
 
+
 class Weapon:
     """Represents a weapon"""
 
