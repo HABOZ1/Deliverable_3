@@ -22,3 +22,6 @@ class Dice:
     def __call__(self) -> int:
         """Allows the Dice object to be called like a function to roll it"""
         return self.roll()
+
+d20 = Dice(sides=20)  # Create a 20-sided dice
+d20.roll()  # Roll the dice and get a random number between 1 and 20

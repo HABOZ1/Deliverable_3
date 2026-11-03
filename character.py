@@ -65,7 +65,7 @@ class Warrior(Character):
         self._armor = armor # Apply the private armor attribute, base 5
 
     def take_damage(self, amount: int) -> None:
-        """Take damage and reduce HP"""
+        """Take damage, reduced by armor, and reduce HP"""
         self._hp -= max(amount - self._armor, 0) # Reduce incoming damage by armor, leave HP unchanged if damage <= armor
         self._hp = max(self._hp, 0) # Ensure HP does not go below 0
 
@@ -78,7 +78,7 @@ class Mage(Character):
         self._mana_max = mana_max # Apply mana max attribute, base 30
 
     def attack(self, target) -> None:
-        """Attack and deal damage to target character"""
+        """Attack and deal damage to target character, using mana to double damage if available"""
         if self._mana >= 10: 
             self._mana -= 10 # Reduce mana stored by 10
             target.take_damage(self.damage * 2) # Calls the target's take_damage() method, doubles the damage done if there is mana left
