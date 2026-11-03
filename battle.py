@@ -1,5 +1,5 @@
 from character import Character
-
+import random
 
 class Battle:
     """Represents a battle between two characters"""
@@ -15,9 +15,15 @@ class Battle:
         print(f"Start: {self.hero.name} (HP: {self.hero.hp}) vs {self.enemy.name} (HP: {self.enemy.hp})")
 
         self.hero.attack(self.enemy)
+        if random.randint(0, 5) == 1:
+            self.hero.heal(20)
+            print("Hero healed!")
 
         if self.enemy.is_alive:
             self.enemy.attack(self.hero)
+            if random.randint(0, 5) == 2:
+                self.enemy.heal(20)
+                print("Enemy Healed!")
 
         print(f"End: {self.hero.name} (HP: {self.hero.hp}) vs {self.enemy.name} (HP: {self.enemy.hp})\n")
 
@@ -30,4 +36,3 @@ class Battle:
             return self.hero
         
         return self.enemy
-    
